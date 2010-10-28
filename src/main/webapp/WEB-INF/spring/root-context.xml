@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+	
+	<!-- Root Context: defines shared resources visible to all other web components -->
+	
+	<bean id="students" class="java.util.ArrayList">
+		<constructor-arg>
+			<list>
+				<bean class="uk.co.eggsylife.persistent.Student">
+					<property name="studentNumber" value="1" />
+					<property name="firstName" value="John" />
+					<property name="lastName" value="Smith" />
+				</bean>
+				<bean class="uk.co.eggsylife.persistent.Student">
+					<property name="studentNumber" value="2" />
+					<property name="firstName" value="Jane" />
+					<property name="lastName" value="Smith" />
+				</bean>
+			</list>
+		</constructor-arg>
+	</bean>
+		
+</beans>
