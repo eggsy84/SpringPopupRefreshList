@@ -8,11 +8,13 @@ import java.util.ArrayList;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import uk.co.eggsylife.persistent.Student;
+import uk.co.eggsylife.validation.StudentValidator;
 
 /**
  * @author eggsy
@@ -27,6 +29,9 @@ public class StudentController {
 	
 	@Autowired
 	protected ArrayList<Student> students = null;
+	
+	@Autowired
+	protected StudentValidator studentValidator = null;
 	
 	
 	@RequestMapping(value="/students", method=RequestMethod.GET)
@@ -48,12 +53,21 @@ public class StudentController {
 	}
 	
 	@RequestMapping(value="/students/edit", method=RequestMethod.POST)
-	public String saveStudentEdit(@ModelAttribute Student student, ModelMap modelMap) {
+	public String saveStudentEdit(@ModelAttribute Student student, BindingResult errors, ModelMap modelMap) {
 		
-		students.add(student);
+		studentValidator.validate(student, errors);
 		
-		modelMap.put("students", students);
+		if( errors.hasErrors() ) {
+			return STUDENT_EDIT_DIALOG_VIEW_KEY;
+		}
+		else {
+			students.add(student);
+			
+			modelMap.put("students", students);
+			
+			return STUDENT_SAVE_SUCCESS_VIEW_KEY;
+		}
 		
-		return STUDENT_SAVE_SUCCESS_VIEW_KEY;
+		
 	}
 }

@@ -21,5 +21,18 @@
 			</list>
 		</constructor-arg>
 	</bean>
+	
+	<bean id="studentValidator" class="uk.co.eggsylife.validation.StudentValidator" />
+	
+	<bean id="messageSource" class="org.springframework.context.support.ReloadableResourceBundleMessageSource">
+		<property name="basenames">
+			<list>
+				<value>classpath:ValidationMessages</value>
+			</list>
+		</property>
+		<property name="cacheSeconds">
+			<value>60</value>
+		</property>
+	</bean>
 		
 </beans>

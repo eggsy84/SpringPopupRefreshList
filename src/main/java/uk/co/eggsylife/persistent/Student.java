@@ -9,15 +9,15 @@ package uk.co.eggsylife.persistent;
  */
 public class Student {
 
-	private int studentNumber = 0;
+	private Long studentNumber = null;
 	private String firstName = null;
 	private String lastName = null;
 	
 	
-	public int getStudentNumber() {
+	public Long getStudentNumber() {
 		return studentNumber;
 	}
-	public void setStudentNumber(int studentNumber) {
+	public void setStudentNumber(Long studentNumber) {
 		this.studentNumber = studentNumber;
 	}
 	

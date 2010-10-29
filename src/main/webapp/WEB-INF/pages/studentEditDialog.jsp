@@ -19,9 +19,19 @@
 				</td>
 			</tr>
 			<tr>
+				<td align="center" colspan="2" style="color: red; font-size: 0.8em;">
+					<form:errors path="firstName" />
+				</td>
+			</tr>
+			<tr>
 				<td>Last name</td>
 				<td>
 					<form:input path="lastName" />
+				</td>
+			</tr>
+			<tr>
+				<td align="center" colspan="2" style="color: red; font-size: 0.8em;">
+					<form:errors path="lastName" />
 				</td>
 			</tr>
 		</table>
