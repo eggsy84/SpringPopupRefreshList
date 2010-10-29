@@ -4,8 +4,13 @@
        "http://tiles.apache.org/dtds/tiles-config_2_1.dtd">
  
 <tiles-definitions>
+
 	<definition name="template.view" template="/WEB-INF/pages/templates/template.jsp">
 		<put-attribute name="content" value="/WEB-INF/pages/blanks.jsp" />
+	</definition>
+	
+	<definition name="home.view" extends="template.view">
+		<put-attribute name="content" value="/WEB-INF/pages/home.jsp" />
 	</definition>
 
 	<definition name="students.view" extends="template.view">
