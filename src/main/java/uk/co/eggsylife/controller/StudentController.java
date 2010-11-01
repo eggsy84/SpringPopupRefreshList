@@ -17,8 +17,7 @@ import uk.co.eggsylife.persistent.Student;
 import uk.co.eggsylife.validation.StudentValidator;
 
 /**
- * @author eggsy
- *
+ * @author eggsy@eggsylife.co.uk
  */
 @Controller
 public class StudentController {

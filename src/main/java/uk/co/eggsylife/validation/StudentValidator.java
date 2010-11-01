@@ -9,8 +9,7 @@ import org.springframework.validation.Validator;
 import uk.co.eggsylife.persistent.Student;
 
 /**
- * @author eggsy
- *
+ * @author eggsy@eggsylife.co.uk
  */
 public class StudentValidator implements Validator {
 

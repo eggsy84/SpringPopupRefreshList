@@ -4,8 +4,7 @@
 package uk.co.eggsylife.persistent;
 
 /**
- * @author eggsy
- *
+ * @author eggsy@eggsylife.co.uk
  */
 public class Student {
 
