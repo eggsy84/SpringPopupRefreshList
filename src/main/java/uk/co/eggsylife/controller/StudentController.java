@@ -24,7 +24,6 @@ public class StudentController {
 
 	private static final String STUDENTS_VIEW_KEY = "students.view";
 	private static final String STUDENT_EDIT_DIALOG_VIEW_KEY = "studentsListAndEditDialog.view";
-	private static final String STUDENT_SAVE_SUCCESS_VIEW_KEY = "studentSaveSuccess.view";
 	
 	@Autowired
 	protected ArrayList<Student> students = null;
@@ -64,7 +63,7 @@ public class StudentController {
 			
 			modelMap.put("students", students);
 			
-			return STUDENT_SAVE_SUCCESS_VIEW_KEY;
+			return STUDENTS_VIEW_KEY;
 		}
 		
 		

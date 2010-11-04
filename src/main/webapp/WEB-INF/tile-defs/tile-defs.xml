@@ -6,11 +6,7 @@
 <tiles-definitions>
 
 	<definition name="template.view" template="/WEB-INF/pages/templates/template.jsp">
-		<put-attribute name="content" value="/WEB-INF/pages/blanks.jsp" />
-	</definition>
-	
-	<definition name="home.view" extends="template.view">
-		<put-attribute name="content" value="/WEB-INF/pages/home.jsp" />
+		<put-attribute name="content" value="/WEB-INF/pages/blank.jsp" />
 	</definition>
 
 	<definition name="students.view" extends="template.view">
@@ -19,20 +15,12 @@
 	
 	<definition name="studentsList.view" template="/WEB-INF/pages/students.jsp">
 		<put-attribute name="studentsList" value="/WEB-INF/pages/studentList.jsp" />
-		<put-attribute name="studentEditDialog" value="/WEB-INF/pages/blank.jsp" />
+		<put-attribute name="studentEditDialog" value="/WEB-INF/pages/util/dialogClose.jsp" />
 	</definition>
 	
 	<definition name="studentsListAndEditDialog.view" extends="studentsList.view">
 		<put-attribute name="studentsList" value="/WEB-INF/pages/blank.jsp" />
 		<put-attribute name="studentEditDialog" value="/WEB-INF/pages/studentEditDialog.jsp" />
 	</definition>
-	
-	<definition name="studentSaveSuccess.view" extends="studentsList.view">
-		<put-attribute name="studentsList" value="/WEB-INF/pages/studentList.jsp" />
-		<put-attribute name="studentEditDialog" value="/WEB-INF/pages/util/dialogClose.jsp" />
-	</definition>
-	
-	
-
 
 </tiles-definitions>
